@@ -1,0 +1,6 @@
+<h2><%= @picture.title %></h2>
+<h3><%= @picture.description %></h3>
+
+<%= link_to "Back", root_path%>
+<%= link_to "Edit", edit_picture_path(@picture) %>
+<%= link_to "Delete", picture_path(@picture), method: :delete, data: { confirm: "Are you sure?"} %>
