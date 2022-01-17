@@ -1,5 +1,6 @@
 <%= simple_form_for @picture do |f| %>
+	<%= f.file_field :file_image %>
 	<%= f.input :title, lable: "Picture Title" %>
 	<%= f.input :description %>
-	<%= f.button :submit %>
+	<%= f.button :submit, class: "btn-custom2" %>
 <% end %>

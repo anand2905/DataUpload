@@ -1,5 +1,16 @@
-<% @pictures.each do |picture| %>
-	<h2><%= link_to picture.title, picture_path(picture) %></h2>
+<% if @pictures.count == 0 %>
+	<h1>There are no Files to show, Please add a File :)</h1>
+<% else %>
+
+ <div class="row">
+	<% @pictures.each do |picture| %>
+	<div class="col-md-3">
+		<a href="/pictures/<%= picture.id %>">
+		<%= image_tag picture.file_image.url(:file_index), class: 'picture' %>
+		<%#= link_to picture.title, picture_path(picture) %></a>
+	</div>
+	<% end %>
+</div>
 <% end %>
 
-<%= link_to 'Add Picture', new_picture_path %>
+<%#= link_to 'Add File', new_picture_path %>
