@@ -1,7 +1,8 @@
 class PicturesController < ApplicationController
 	before_action :find_picture, only: [:show, :edit, :update, :destroy]
+	before_action :authenticate_user!, only: [:index, :new, :edit, :show]
 	def index
-		@pictures = Picture.all.order("created_at DESC"
+		@pictures = current_user.pictures.all.order("created_at DESC"
 			)
 	end
 
@@ -14,7 +15,6 @@ class PicturesController < ApplicationController
 
 	def create
 		@picture = current_user.pictures.build(picture_params)
-
 		if @picture.save
 			redirect_to root_path
 		else
@@ -41,7 +41,7 @@ class PicturesController < ApplicationController
 	private
 
 		def picture_params
-			params.require(:picture).permit(:title, :description)
+			params.require(:picture).permit(:title, :description, :file_image)
 		end
 
 		def find_picture
