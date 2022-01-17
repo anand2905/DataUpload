@@ -1,27 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Requirements!!!
+- Ruby '2.7.4'
+- Rails '5.2.6'
+- DB Postgres
+### Installation
+- Run git clone , && cd project-dir, && bundle install
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-=======
-# FileUpload
-A system allowing verified users to upload sensitive data in the form of large files.
+### Features
+- Sign up
+- Log In
+- Log Out
+- Forget Password
+-  Add File, edit, update and destroy
+-  Add file title, description
